@@ -1,0 +1,27 @@
+ALGORITHM sum_elements_distincts_1 
+
+ VAR
+  set1,set2: table : ARRAY_OF integer[];
+ i,j : INTEGER ;
+ BEGIN
+  write("set1: ")
+  write("set2: ")
+  Read(set1);
+  Read(set2);
+ VAR sum=0 
+ FOR i FROM 0 TO set1.length STEP 1  DO
+    FOR j FROM 0 TO set2.length STEP 1 DO
+        IF (set1[i]<>set2[j]) THEN
+            sum:=sum+set1[i]
+        END_IF
+         END_FOR
+       END_FOR
+        FOR j FROM 0 TO set2.length STEP 1  DO
+    FOR i FROM 0 TO set1.length STEP 1 DO
+    IF (set2[j]<>set1[i]) THEN
+        sum:=sum+set2[j]
+    END_IF
+    END_FOR
+ END_FOR
+ write('la somme des elements distincts:',sum)
+ END 
